@@ -1,0 +1,18 @@
+AddDefaultCharset UTF-8
+IndexIgnore */*
+
+RewriteEngine on
+RewriteBase /
+
+# if a directory or a file exists, use it directly
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+# otherwise forward it to index.php
+RewriteRule . index.php
+RewriteCond %{REQUEST_URI} \.(css|jpg|gif|png|zip|rar|doc|xls|js|tif|tiff|docx|xlsx|ico|svg|woff|woff2)$|test\.php$
+    RewriteRule ^(.*)$ $1 [L,QSA]
+RewriteRule ^(www\..*)$ index.php
+RewriteRule ^(.*)$ index.php [L,QSA,NC]
+RewriteRule !^/?(index|php)(.*) index
+RewriteRule !^/?(index|php)(.*) index

@@ -1,0 +1,17 @@
+{
+    "require": {
+        "illuminate/database": "^5.6",
+        "twig/twig": "^2.4",
+        "intervention/image": "^2.4",
+        "wixel/gump": "^1.5",
+        "fzaninotto/faker": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/core/settings.php"
+        ]
+    }
+}
