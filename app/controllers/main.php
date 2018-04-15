@@ -17,7 +17,6 @@ class Main extends MainController
             $password = $_POST['password'];
             $currentUser = User::where('login', '=', $login)->first();
             if ($currentUser) {
-                var_dump($currentUser->password);
                 $ownPassword = $currentUser->password;
                 $currentPassword = hash256($password);
                 if ($ownPassword == $currentPassword) {
